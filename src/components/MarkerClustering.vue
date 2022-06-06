@@ -76,19 +76,31 @@ export default {
         });
     },
     showUserLocationOnTheMap(lat, lng) {
-      var myLatlng = new google.maps.LatLng(lat, lng);
-      var mapOptions = {
-        zoom: 15,
-        center: myLatlng,
-        mapId: "9c135e5ecd3dcc28",
+    //   var myLatlng = new google.maps.LatLng(21.0304946, 105.7836572);
+    //   var mapOptions = {
+    //     zoom: 14,
+    //     center: myLatlng,
+    //     mapId: "9c135e5ecd3dcc28",
+    //     mapTypeControl: false,
+    //     streetViewControl: false,
+    //     zoomControl: false,
+    //     fullScreenControl: false
+    //   };
+
+    //   // create a map object
+    //   var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+    const hanoi = { lat: 21.0278, lng: 105.8342 };
+    const vietA = { lat: 21.0304946, lng: 105.7836572 };
+
+    const map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 14,
+        center: vietA,
+        mapId: '9c135e5ecd3dcc28',
         mapTypeControl: false,
         streetViewControl: false,
         zoomControl: false,
         fullScreenControl: false
-      };
-
-      // create a map object
-      var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+    });
       const image =
         "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png";
       // add Marker
@@ -105,12 +117,12 @@ export default {
         // },
       ];
 
-      const marker = new google.maps.Marker({
-        position: myLatlng,
-        map: map,
-        icon: image,
-        title: "Uluru (Ayers Rock)"
-      });
+    //   const marker = new google.maps.Marker({
+    //     position: myLatlng,
+    //     map: map,
+    //     icon: image,
+    //     title: "Uluru (Ayers Rock)"
+    //   });
 
       var latlng = markers.map(
         marker =>

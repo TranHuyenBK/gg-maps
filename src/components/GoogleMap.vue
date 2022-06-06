@@ -262,7 +262,7 @@ export default {
         (this.addressTo = ""),
         (this.showMap = false);
       this.distance = "";
-      // document.getElementById("directions_panel").innerHTML = "";
+      document.getElementById("sidebar").innerHTML = ""
     },
     calculateAndDisplayRoute(directionsService, directionsRenderer) {
       directionsService
@@ -311,7 +311,11 @@ export default {
       // const currentDiv = document.getElementById("container")
       // document.body.appendChild(newDiv, currentDiv);
 
-      // directionsRenderer.setPanel(document.getElementById("sidebar"));
+      directionsRenderer.setPanel(null);
+      document.getElementById("sidebar").innerHTML = ""
+      directionsRenderer.setPanel(document.getElementById("sidebar"));
+
+
       directionsRenderer.setOptions({
         polylineOptions: {
           strokeColor: "red"
